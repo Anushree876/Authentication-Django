@@ -1,45 +1,40 @@
-# Authentication Django Project 🔐🔐🔐
+# Django Authentication Project Setup Guide
 
-A Django web application implementing user registration, login, and profile management using SQLite as the database.
-Frontend is built using Bootstrap.
----
-
-## Features
-
-- User signup and login functionality
-- Custom user model and forms
-- Password validation and authentication
-- Admin interface
-- Uses `django-bootstrap5` for styling forms and templates
-- SQLite as the default database
+This guide will help you clone, install, and run the Django authentication project locally using SQLite.
 
 ---
 
-## Getting Started
+## 🚀 Step-by-Step Setup Instructions
 
-### Prerequisites
+### 1. Clone the Repository
 
-- Python 3.10+
-
----
-
-### Installation
-
-1. **Clone the repository**
+Open a terminal and run:
 
 ```bash
 git clone https://github.com/Anushree876/Authentication-Django.git
 cd Authentication-Django
 
-Install dependencies
+2. Install Required Python Packages
+Install all dependencies listed in requirements.txt:
 pip install -r requirements.txt
 
-Apply database migrations
+3. Apply Migrations
+Run the following commands to set up your database:
+python manage.py makemigrations
 python manage.py migrate
+✅ This will create the default db.sqlite3 database file.
 
-Create a superuser to access the admin panel
+4. Create a Superuser for Admin Access
 python manage.py createsuperuser
+You'll be prompted to enter a username, email, and password.
 
+5. Run the Development Server
 python manage.py runserver
-Open your browser at http://127.0.0.1:8000
-And get the authentication experience.
+Once the server starts, visit the following URLs in your browser:
+
+🌐 Homepage: http://127.0.0.1:8000/
+
+🔐 Admin Panel: http://127.0.0.1:8000/admin/
+
+
+
