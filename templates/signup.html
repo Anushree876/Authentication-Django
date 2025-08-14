@@ -1,0 +1,36 @@
+{% load django_bootstrap5 %}
+
+<!DOCTYPE html>
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoZrslnf6dN9+6lZlE03DJ3czV0Az2W3+KfN5tGXpDYGK2a" crossorigin="anonymous">
+
+<head>
+    <title>Signup</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Sign Up</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% for field in form %}
+            {% for error in field.errors %}
+            <div class="text-danger">{{ error }}</div>
+            {% endfor %}
+            {% endfor %}
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+    <div class="text-center mt-3">
+        <p>Alreadyhave an account <a href="{% url 'login' %}">Log In</a> instead. </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+Ij/1eOomR7kwM26x3r9E6M7hbT+/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
